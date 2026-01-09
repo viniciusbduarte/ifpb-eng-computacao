@@ -1,0 +1,7 @@
+trab/
+*.project
+.clang-format
+.clangd
+obj
+game
+obj/
