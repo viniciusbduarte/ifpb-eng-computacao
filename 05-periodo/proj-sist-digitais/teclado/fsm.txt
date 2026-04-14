@@ -1,0 +1,126 @@
+┌─────────────────────────────────────────────────────────────────┐
+│                    FSM DE DEBOUNCE                              │
+└─────────────────────────────────────────────────────────────────┘
+
+                          RESET
+                            ↓
+                        ┌──────────┐
+                        │ DB_IDLE  │
+                        └──┬───────┘
+                           │
+                    raw_valid = 1?
+                    (tecla detectada)
+                           │ SIM
+                           ↓
+                    db_cnt ← 1
+                    key_bcd ← raw_bcd
+                           │
+                        ┌──────────┐
+                        │ DB_COUNT │ (Contando 100 µs)
+                        └──┬───────┘
+                           │
+                  ┌─────────┴─────────┐
+                  │                   │
+            raw_valid=0?         db_cnt ≥ 99?
+            (tecla liberada)     (debounce ok)
+                  │ SIM               │ SIM
+                  │                   ↓
+                  │              key_pulse ← 1
+                  │              rep_cnt ← 0
+                  │            ┌──────────────┐
+                  │            │ DB_LOCKED    │ (Tecla validada)
+                  │            └──┬───────────┘
+                  │               │
+                  │          raw_valid = 0?
+                  │          (liberada)
+                  │               │ SIM
+                  └───────────────→←──────────┐
+                                              │
+                                      DB_IDLE ←─┘
+                                              
+┌────────────────────────────────────────────────────────────────┐
+│ DENTRO DE DB_LOCKED (Se key_bcd ≤ 9):                          │
+│                                                                │
+│ rep_phase = 0 (hold)?                                          │
+│ ├─ NÃO: rep_cnt incrementa até HOLD_VAL (2s)                 │
+│ ├─ SIM: rep_pulse ← 1, rep_phase ← 1, ENTRA EM RATE           │
+│                                                                │
+│ rep_phase = 1 (rate)?                                          │
+│ ├─ rep_cnt incrementa até RATE_VAL (1s)                       │
+│ ├─ rep_pulse ← 1, rep_cnt ← 0 (repete a cada 1s)             │
+│                                                                │
+│ * e # NÃO têm auto-repeat (não compram >= 0xA)               │
+└────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│              FSM PRINCIPAL (PROCESSAMENTO)                      │
+└─────────────────────────────────────────────────────────────────┘
+
+                          RESET
+                            ↓
+                        ┌──────────┐
+                        │ ST_IDLE  │ (Aguardando 1º dígito)
+                        └──┬───────┘
+                           │
+                    key_pulse = 1?
+                    (tecla validada)
+                           │ SIM
+                    ┌──────┴──────┐
+                    │             │
+              key_bcd=0xA?    key_bcd=0xB?    0-9?
+              (asterisco)     (hash)          (dígito)
+                    │             │               │
+                    ↓             ↓               ↓
+            ┌──────────────┐ ┌────────┐  ┌────────────┐
+            │ ST_CONFIRM   │ │ST_HASH │  │ ST_DIGIT   │ (Acumulando dígitos)
+            └──┬───────────┘ └───┬────┘  └──┬─────────┘
+               │                 │          │
+            [DELAY 20µs]    [SET buffer    key_pulse OR
+            [SET valid]      = 0xB]        rep_pulse?
+            [VALIDATE]      [SET valid]    (novo dígito)
+               │             │               │
+               ↓             ↓               ├─ key_bcd = 0xA? → ST_CONFIRM
+         ┌──────────┐   ┌──────────┐       ├─ key_bcd = 0xB? → ST_HASH
+         │ ST_CLR   │   │ ST_CLR   │       └─ 0-9? → SHIFT buffer[19:0] e insere
+         └──┬───────┘   └──┬───────┘          (desloca para esquerda)
+            │               │
+      [RESET buffer]   [RESET buffer]
+      [to_active=0]   [to_active=0]
+            │               │
+            └───────┬───────┘
+                    │
+                    ↓
+              ┌──────────┐
+              │ ST_IDLE  │ (Volta a aguardar)
+              └──────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ TIMEOUT GLOBAL (5 segundos):                                    │
+│                                                                │
+│ Quando to_active = 1:                                          │
+│ - to_cnt incrementa a cada ciclo                              │
+│ - Quando to_cnt ≥ TIMEOUT_VAL (5.000.000 µs):                │
+│   └─ digitos_value ← {20{0xE}} (erro)                         │
+│   └─ digitos_valid ← 1 (pulso)                                │
+│   └─ fsm ← ST_CLR                                             │
+│                                                                │
+│ to_active é ATIVADO em ST_IDLE quando key_pulse = 1           │
+│ to_active é DESATIVADO quando digitos_valid = 1               │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ BUFFER DE DÍGITOS (20 × 4 bits = 80 bits):                     │
+│                                                                │
+│ digits[19] = mais antigo (primeiro digitado)                   │
+│ digits[0]  = mais recente (último digitado)                    │
+│                                                                │
+│ Quando confir: todo buffer é enviado (com 0xF em posições      │
+│ não preenchidas)                                               │
+│                                                                │
+│ Códigos de saída:                                              │
+│ - 0x0-0x9: Dígitos (0-9)                                       │
+│ - 0xA: * (asterisco/confirmação)                               │
+│ - 0xB: # (hash/reset)                                          │
+│ - 0xE: Erro (timeout)                                          │
+│ - 0xF: Inválido (posição não preenchida)                       │
+└────────────────────────────────────────────────────────────────┘
