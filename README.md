@@ -12,16 +12,12 @@ As cadeiras estão organizadas da seguinte forma:
 
 ```
 📦 ifpb-eng-computacao
- ┣ 📂 1-periodo
- ┃ ┣ 📂 cadeira-a
- ┣ ┣ ┣ 📂 material
- ┃ ┣ 📂 cadeira-b
- ┣ 📂 2-periodo
- ┃ ┣ 📂 cadeira-a
- ┣ ┣ ┣ 📂 material
- ┃ ┣ 📂 cadeira-b
- ┣ ┣ ┣ 📂 material
- ┣ ┣ ┣ 📂 material
+ ┣ 📂 matematica-e-fisica
+ ┣ 📂 programacao-e-software
+ ┣ 📂 hardware-e-eletronica
+ ┣ 📂 redes-e-sistemas-operacionais
+ ┣ 📂 formacao-geral
+ ┣ 📂 projetos-e-optativas
 ```
 
 Cada pasta de cadeira pode conter:
