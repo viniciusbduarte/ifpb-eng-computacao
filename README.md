@@ -2,8 +2,6 @@
 
 Este repositório reúne **todas as cadeiras (disciplinas) do meu curso de faculdade**, organizadas por ano e semestre, com materiais de apoio, resumos, exercícios, projetos e links úteis.
 
-O objetivo é servir como **arquivo pessoal de estudo** e também como **fonte de consulta** para outros estudantes.
-
 ---
 
 ## 🧭 Estrutura do Repositório
@@ -130,11 +128,11 @@ Cada pasta de cadeira pode conter:
 
 ## 📌 Aviso
 
-Este repositório **não tem como objetivo incentivar ou facilitar cola, plágio ou qualquer forma de desonestidade académica**.
+Este repositório **não tem como objetivo incentivar ou facilitar cola, plágio ou qualquer forma de desonestidade acadêmica**.
 
 Todo o conteúdo aqui presente destina-se exclusivamente a **apoio ao estudo, revisão de matérias e organização pessoal**, devendo ser utilizado de forma ética e responsável.
 
-Cada estudante é responsável por compreender os conteúdos e cumprir os regulamentos académicos da sua instituição.
+Cada estudante é responsável por compreender os conteúdos e cumprir os regulamentos acadêmicos da sua instituição.
 
 ---
 
