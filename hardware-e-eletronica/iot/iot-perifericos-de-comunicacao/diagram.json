@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "ESP32-S3 Multi-Module Project",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": { "builder": "esp-idf" }
+    },
+    { "type": "board-ssd1306", "id": "oled", "top": -92.86, "left": -249.37, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu", "top": 147.82, "left": -304.88, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sdcard", "top": 182.63, "left": -201.53, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:GND.1", "oled:GND", "black", [ "h-72.28", "v-355.38", "h-144" ] ],
+    [ "esp:3V3.1", "oled:VCC", "red", [ "h-110.68", "v-144.18", "h-96.15" ] ],
+    [ "esp:8", "oled:SDA", "green", [ "h-14.68", "v-230.58", "h-172.87" ] ],
+    [ "esp:9", "oled:SCL", "blue", [ "h-33.88", "v-268.98", "h-163.5" ] ],
+    [ "esp:GND.1", "mpu:GND", "black", [ "h-72.28", "v-124.98", "h-172.88" ] ],
+    [ "esp:3V3.1", "mpu:VCC", "red", [ "h-110.68", "v115.02", "h-124.88" ] ],
+    [ "esp:8", "mpu:SDA", "green", [ "v-0.18", "h-264.36" ] ],
+    [ "esp:9", "mpu:SCL", "blue", [ "h-33.88", "v-38.58", "h-220.88" ] ],
+    [ "esp:GND.1", "sdcard:GND", "black", [ "h-72.28", "v-48.29" ] ],
+    [ "esp:3V3.1", "sdcard:VCC", "red", [ "h-110.68", "v172.48" ] ],
+    [ "esp:10", "sdcard:CS", "orange", [ "h-43.48", "v47.76" ] ],
+    [ "esp:11", "sdcard:DI", "green", [ "h-81.88", "v28.71" ] ],
+    [ "esp:12", "sdcard:SCK", "blue", [ "v0" ] ],
+    [ "esp:13", "sdcard:DO", "yellow", [ "h-62.68", "v-29.09" ] ],
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ]
+  ],
+  "dependencies": {}
+}
