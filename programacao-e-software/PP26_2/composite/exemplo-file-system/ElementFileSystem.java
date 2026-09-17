@@ -1,0 +1,3 @@
+interface ElementFileSystem {
+    void ls();
+}
