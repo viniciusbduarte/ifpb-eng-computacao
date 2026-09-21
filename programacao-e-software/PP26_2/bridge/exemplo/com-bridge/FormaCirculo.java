@@ -1,5 +1,5 @@
-public class Circulo extends Forma {
-    public Circulo(Cor cor) {
+public class FormaCirculo extends Forma {
+    public FormaCirculo(Cor cor) {
         super(cor);
     }
 

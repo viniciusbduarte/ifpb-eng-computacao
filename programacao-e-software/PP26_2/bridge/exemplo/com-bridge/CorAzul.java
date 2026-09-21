@@ -1,4 +1,4 @@
-public class Azul implements Cor {
+public class CorAzul implements Cor {
     @Override
     public String nome() {
         return "azul";
