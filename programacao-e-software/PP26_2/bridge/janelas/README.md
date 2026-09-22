@@ -228,4 +228,9 @@ Só para demonstrar as duas funcionalidades novas em uso:
 | **Modificados** | `JanelaImplementada.java`, `JanelaWindows.java`, `JanelaLinux.java`, `JanelaAbstrata.java` (opcional), classe cliente (`main`) |
 | **Não alterados** | `JanelaDialogo.java`, `JanelaAviso.java` |
 
+
+## Diagrama 
+
+![Bridge](docs/diagrama.png)
+
 O padrão Bridge se confirma na prática: para adicionar uma plataforma (Mac) só foi preciso criar **1 classe nova**, e para adicionar uma abstração (CaixaTexto) também só foi preciso criar **1 classe nova**. As duas hierarquias (abstração e implementação) continuam variando de forma independente, exatamente como descrito na intenção do padrão citada no post original.
