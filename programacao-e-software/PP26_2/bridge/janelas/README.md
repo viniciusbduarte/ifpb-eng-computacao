@@ -27,8 +27,6 @@ Precisa de dois métodos novos: um para desenhar a caixa de texto e um para ler 
  }
 ```
 
-> **Atenção:** como `JanelaWindows` e `JanelaLinux` já existem e implementam `JanelaImplementada`, adicionar métodos abstratos aqui obriga a alterar as duas classes também (seções 2 e 3). Se quiser evitar tocar nas classes já existentes, uma alternativa é declarar os dois métodos novos como `default` na interface (Java 8+), com uma implementação padrão, e só sobrescrever onde for necessário.
-
 ---
 
 ## 2. `JanelaWindows.java` — modificado
@@ -59,8 +57,6 @@ Precisa de dois métodos novos: um para desenhar a caixa de texto e um para ler 
 
  }
 ```
-
-*(não esqueça do `import java.util.Scanner;` no topo do arquivo)*
 
 ---
 
