@@ -6,4 +6,8 @@ public interface JanelaImplementada {
 
 	void desenharBotao(String titulo);
 
+	void desenharCaixaTexto(String rotulo);
+
+	String lerCaixaTexto();
+
 }

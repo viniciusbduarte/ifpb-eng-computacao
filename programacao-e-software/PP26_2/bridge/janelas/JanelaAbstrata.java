@@ -16,6 +16,10 @@ public abstract class JanelaAbstrata {
 		janela.desenharBotao(titulo);
 	}
 
+	public void desenharCaixaTexto(String rotulo) {
+		janela.desenharCaixaTexto(rotulo);
+	}
+
 	public abstract void desenhar();
 
 }

@@ -2,21 +2,21 @@ package br.padroes.bridge;
 
 import java.util.Scanner;
 
-public class JanelaWindows implements JanelaImplementada {
+public class JanelaMac implements JanelaImplementada {
 
 	@Override
 	public void desenharJanela(String titulo) {
-		System.out.println(titulo + " - Janela Windows");
+		System.out.println(titulo + " - Janela Mac");
 	}
 
 	@Override
 	public void desenharBotao(String titulo) {
-		System.out.println(titulo + " - Botão Windows");
+		System.out.println(titulo + " - Botão Mac");
 	}
 
 	@Override
 	public void desenharCaixaTexto(String rotulo) {
-		System.out.println(rotulo + " - Caixa de Texto Windows");
+		System.out.println(rotulo + " - Caixa de Texto Mac");
 	}
 
 	@Override
