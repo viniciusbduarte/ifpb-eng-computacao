@@ -7,15 +7,6 @@ Fonte original: [Marcos Brizeno](https://brizeno.wordpress.com/2011/10/13/mao-na
 1. Suportar a plataforma **MacOS** (além de Windows e Linux já existentes).
 2. Suportar uma nova abstração de janela com **entrada de dados** (uma Janela do tipo "EditBox" / Caixa de Texto), válida para qualquer sistema operacional.
 
-## Convenção de cores
-
-Os blocos de código abaixo estão em formato `diff`, então a maioria dos visualizadores de Markdown (GitHub, VS Code, etc.) colore automaticamente:
-
-- 🟩 **Linha verde, com `+` na frente** → código **novo**, que precisa ser acrescentado.
-- ⬜ **Linha sem cor** → código que **já existia** no post do Marcos Brizeno, sem nenhuma mudança (mostrado como contexto).
-
-Classes inteiramente novas (`JanelaMac`, `JanelaCaixaTexto`) aparecem com o arquivo inteiro em verde. Classes que já existiam mas ganharam métodos novos (`JanelaImplementada`, `JanelaWindows`, `JanelaLinux`, `JanelaAbstrata`) aparecem com o código antigo sem cor e só as linhas novas em verde.
-
 ---
 
 ## 1. `JanelaImplementada.java` — modificado
