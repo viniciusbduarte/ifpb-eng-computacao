@@ -1,6 +1,9 @@
+#include <stdio.h>
+
 #include "driver/gpio.h"
 #include "esp_event.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "mqtt_client.h"
@@ -13,15 +16,41 @@ static QueueHandle_t button_queue;
 
 #define BUTTON_GPIO GPIO_NUM_4
 #define MQTT_TOPIC "gotham/dpgc/batsignal"
+#define STATUS_TOPIC "gotham/dpgc/status"
+#define KEEP_ALIVE_INTERVAL_MS 30000
+
+static bool mqtt_connected;
+
+static void keep_alive_task(void *pvParameters)
+{
+    char payload[96];
+
+    while (true) {
+        vTaskDelay(pdMS_TO_TICKS(KEEP_ALIVE_INTERVAL_MS));
+
+        if (!mqtt_connected) {
+            continue;
+        }
+
+        int uptime_s = (int)(esp_timer_get_time() / 1000000);
+        int payload_len = snprintf(payload, sizeof(payload),
+                                   "{\"device\":\"bat_button\",\"status\":\"ONLINE\",\"uptime_s\":%d}",
+                                   uptime_s);
+        esp_mqtt_client_publish(client, STATUS_TOPIC, payload, payload_len, 1, 0);
+        ESP_LOGI(TAG, "Keep alive publicado: %s", payload);
+    }
+}
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                                int32_t event_id, void *event_data)
 {
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
+        mqtt_connected = true;
         ESP_LOGI(TAG, "Conectado ao broker");
         break;
     case MQTT_EVENT_DISCONNECTED:
+        mqtt_connected = false;
         ESP_LOGI(TAG, "Desconectado do broker");
         break;
     default:
@@ -63,6 +92,7 @@ void mqtt_publisher_start(void)
     client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
+    xTaskCreate(keep_alive_task, "keep_alive_task", 4096, NULL, 5, NULL);
 
     gpio_config_t button_config = {
         .pin_bit_mask = 1ULL << BUTTON_GPIO,

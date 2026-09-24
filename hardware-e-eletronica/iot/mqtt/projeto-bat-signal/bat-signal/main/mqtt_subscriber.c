@@ -1,14 +1,42 @@
+#include <stdio.h>
 #include <string.h>
 
 #include "driver/gpio.h"
+#include "esp_timer.h"
 #include "esp_log.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "mqtt_client.h"
 
 #include "mqtt_subscriber.h"
 
 #define LED_GPIO GPIO_NUM_2
+#define STATUS_TOPIC "gotham/dpgc/status"
+#define KEEP_ALIVE_INTERVAL_MS 30000
 
 static const char *TAG = "SUBSCRIBER";
+static esp_mqtt_client_handle_t client;
+static bool mqtt_connected;
+
+static void keep_alive_task(void *pvParameters)
+{
+    char payload[96];
+
+    while (true) {
+        vTaskDelay(pdMS_TO_TICKS(KEEP_ALIVE_INTERVAL_MS));
+
+        if (!mqtt_connected) {
+            continue;
+        }
+
+        int uptime_s = (int)(esp_timer_get_time() / 1000000);
+        int payload_len = snprintf(payload, sizeof(payload),
+                                   "{\"device\":\"bat_signal\",\"status\":\"ONLINE\",\"uptime_s\":%d}",
+                                   uptime_s);
+        esp_mqtt_client_publish(client, STATUS_TOPIC, payload, payload_len, 1, 0);
+        ESP_LOGI(TAG, "Keep alive publicado: %s", payload);
+    }
+}
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                                 int32_t event_id, void *event_data)
@@ -18,8 +46,12 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
 
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
+        mqtt_connected = true;
         ESP_LOGI(TAG, "Conectado, assinando tópico");
         esp_mqtt_client_subscribe(client, "gotham/dpgc/batsignal", 1);
+        break;
+    case MQTT_EVENT_DISCONNECTED:
+        mqtt_connected = false;
         break;
     case MQTT_EVENT_DATA:
         ESP_LOGI(TAG, "TOPIC=%.*s DATA=%.*s",
@@ -51,7 +83,8 @@ void mqtt_subscriber_start(void)
         .credentials.authentication.password = "esp32pwd",
     };
 
-    esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
+    client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, NULL);
     esp_mqtt_client_start(client);
+    xTaskCreate(keep_alive_task, "keep_alive_task", 4096, NULL, 5, NULL);
 }
