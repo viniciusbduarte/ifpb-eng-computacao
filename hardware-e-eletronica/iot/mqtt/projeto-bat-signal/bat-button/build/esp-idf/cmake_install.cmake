@@ -139,11 +139,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/esp_driver_gpio/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
   include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/esp_hal_uart/cmake_install.cmake")
 endif()
 
@@ -219,7 +214,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/hal/cmake_install.cmake")
+  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/log/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -229,12 +224,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/soc/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/esp_hal_gpio/cmake_install.cmake")
+  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/hal/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -284,7 +274,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/log/cmake_install.cmake")
+  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/soc/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/esp_hal_gpio/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-button/build/esp-idf/esp_driver_gpio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

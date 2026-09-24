@@ -1,2 +1,29 @@
-.aider*
+# Build
+build/
+build-*/
+cmake-build-*/
+Debug/
+Release/
+
+# Arquivos compilados
+*.o
+*.a
+*.elf
+*.bin
+*.hex
+*.map
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# VS Code
 .vscode/
+.aider*
+
+
+# Arquivos temporários
+*.tmp
+*.log

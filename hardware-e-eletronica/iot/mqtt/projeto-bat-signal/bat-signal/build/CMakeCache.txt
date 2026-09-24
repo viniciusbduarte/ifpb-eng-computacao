@@ -407,7 +407,7 @@ USE_STATIC_MBEDTLS_LIBRARY:BOOL=ON
 USE_STATIC_TF_PSA_CRYPTO_LIBRARY:BOOL=ON
 
 //Dependencies for the target
-builtin_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;idf::esp_security;
+builtin_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;idf::esp_security;
 
 //Value Computed by CMake
 esp-idf_BINARY_DIR:STATIC=/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-signal/build/esp-idf
@@ -419,16 +419,16 @@ esp-idf_IS_TOP_LEVEL:STATIC=OFF
 esp-idf_SOURCE_DIR:STATIC=/home/viniciusbduarte/.espressif/v6.1/esp-idf
 
 //Dependencies for the target
-everest_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;
+everest_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;
 
 //Dependencies for the target
-extras_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;idf::esp_security;
+extras_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;idf::esp_security;
 
 //Dependencies for the target
-mbedtls_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;mbedx509;general;idf::esp_security;
+mbedtls_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;mbedx509;general;idf::esp_security;
 
 //Dependencies for the target
-mbedx509_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;tfpsacrypto;general;idf::esp_security;
+mbedx509_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;tfpsacrypto;general;idf::esp_security;
 
 //Value Computed by CMake
 mqtt_tcp_BINARY_DIR:STATIC=/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-signal/build
@@ -440,19 +440,19 @@ mqtt_tcp_IS_TOP_LEVEL:STATIC=ON
 mqtt_tcp_SOURCE_DIR:STATIC=/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-signal
 
 //Dependencies for the target
-p256-m_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;idf::esp_security;
+p256-m_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;idf::esp_security;
 
 //Dependencies for the target
-platform_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;idf::esp_security;
+platform_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;idf::esp_security;
 
 //Dependencies for the target
-pqcp_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;
+pqcp_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;
 
 //Dependencies for the target
-tfpsacrypto_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;__idf_nvs_flash;general;idf::esp_security;
+tfpsacrypto_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_nvs_flash;general;idf::esp_security;
 
 //Dependencies for the target
-utilities_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;__idf_xtensa;general;idf::esp_security;
+utilities_LIB_DEPENDS:STATIC=general;__idf_cxx;general;__idf_esp_libc;general;__idf_freertos;general;__idf_esp_hw_support;general;__idf_heap;general;__idf_log;general;__idf_soc;general;__idf_hal;general;__idf_esp_rom;general;__idf_esp_common;general;__idf_esp_system;general;__idf_esp_stdio;general;__idf_xtensa;general;idf::esp_security;
 
 
 ########################

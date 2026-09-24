@@ -82,7 +82,6 @@ $<TARGET_FILE:idf::esp_partition>
 $<TARGET_FILE:idf::efuse>
 $<TARGET_FILE:idf::esp_hal_timg>
 $<TARGET_FILE:idf::esp_timer>
-$<TARGET_FILE:idf::esp_driver_gpio>
 $<TARGET_FILE:idf::esp_hal_uart>
 $<TARGET_FILE:idf::esp_pm>
 $<TARGET_FILE:idf::esp_mm>
@@ -95,10 +94,9 @@ $<TARGET_FILE:idf::spi_flash>
 $<TARGET_FILE:idf::esp_system>
 $<TARGET_FILE:idf::esp_common>
 $<TARGET_FILE:idf::esp_rom>
-$<TARGET_FILE:idf::hal>
+$<TARGET_FILE:idf::log>
 $<TARGET_FILE:idf::heap>
-$<TARGET_FILE:idf::soc>
-$<TARGET_FILE:idf::esp_hal_gpio>
+$<TARGET_FILE:idf::hal>
 $<TARGET_FILE:idf::esp_hal_pmu>
 $<TARGET_FILE:idf::esp_hal_touch_sens>
 $<TARGET_FILE:idf::esp_hw_support>
@@ -106,7 +104,9 @@ $<TARGET_FILE:idf::freertos>
 $<TARGET_FILE:idf::esp_libc>
 $<TARGET_FILE:idf::pthread>
 $<TARGET_FILE:idf::cxx>
-$<TARGET_FILE:idf::log>
+$<TARGET_FILE:idf::soc>
+$<TARGET_FILE:idf::esp_hal_gpio>
+$<TARGET_FILE:idf::esp_driver_gpio>
 $<TARGET_FILE:idf::esp_event>
 $<TARGET_FILE:idf::nvs_sec_provider>
 $<TARGET_FILE:idf::nvs_flash>
