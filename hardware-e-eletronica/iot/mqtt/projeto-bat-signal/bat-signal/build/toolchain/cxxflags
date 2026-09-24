@@ -1,0 +1,7 @@
+"-specs=/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/bat-signal/build/specs/picolibc.specs"
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+-fno-rtti
