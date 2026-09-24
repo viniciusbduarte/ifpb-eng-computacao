@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/home/viniciusbduarte/Documentos/ifpb-eng-computacao/hardware-e-eletronica/iot/mqtt/projeto-bat-signal/subscriber/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
