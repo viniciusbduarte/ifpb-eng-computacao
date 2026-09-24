@@ -4,6 +4,11 @@
 #include "nvs_flash.h"
 #include "protocol_examples_common.h"
 
+/**
+ * @brief Ponto de entrada do Node A.
+ *
+ * Inicializa a rede e inicia o publicador MQTT do botão.
+ */
 void app_main(void)
 {
     ESP_ERROR_CHECK(nvs_flash_init());
